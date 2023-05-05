@@ -53,7 +53,7 @@ const ProductList = () => {
   const handleChildOnDragEnd = ({ result, index }) => {
     let temp = productsField.map((temp1, idx) => {
       if (idx === index) return temp1?.variants;
-      else return;
+      else return null;
     });
 
     if (!result.destination) return;
@@ -79,6 +79,7 @@ const ProductList = () => {
   const handleVariantDelete = (id) => {
     let temp = productsField.map((temp1, idx) => {
       if (indextemp === idx) return temp1?.variants;
+      else return null;
     });
     let removedVar = temp[0].filter((x) => x.id !== id);
     if (removedVar) {
